@@ -1847,6 +1847,14 @@ nav ul {
                 top: 0;
             }
         }
+        @keyframes scrolly-pull-up {
+            0%, 30% {
+                top: var(--scrolly-move-by, 5vh);
+            }
+            100% {
+                top: 0;
+            }
+        }
         @keyframes scrolly-parallax {
             to {
                 transform: translateY(var(--scrolly-move-by));
@@ -1886,7 +1894,7 @@ nav ul {
             &:nth-child(n+11) { --scrolly-stagger: 0%; }
         }
     }
-        /* GROUP UTILITIES / FRAMEWORK / SCROLLY / FADE IN UP CHILDREN
+    /* GROUP UTILITIES / FRAMEWORK / SCROLLY / FADE IN UP CHILDREN
     =================================================== */
     .u-scrolly-fade-in-up-children {
         > * {
@@ -1935,7 +1943,7 @@ nav ul {
         - This is based on the picture elements being absolutely positioned
 
     */
-    .u-scrolly-parallax-view {
+    .u-scrolly-parallax-images-view {
         view-timeline-name: --scrolly-parallax;
         --scrolly-move-by: -10vh;
         will-change: transform;
@@ -1950,7 +1958,7 @@ nav ul {
         - This is based on the picture elements being absolutely positioned
 
     */
-    .u-scrolly-parallax {
+    .u-scrolly-parallax-images {
         view-timeline-name: --scrolly-parallax;
         & picture, svg {
             --scrolly-move-by: -10vh;
@@ -1962,6 +1970,25 @@ nav ul {
             &:nth-of-type(3),
             &:nth-of-type(4) {
                 --scrolly-move-by: -30vh;
+            }
+        }
+    }
+    /* GROUP UTILITIES / FRAMEWORK / SCROLLY / PARALLAX / CHILDREN
+    =================================================== */
+    /* I haven't tested this yet */
+    .u-scrolly-parallax-children {
+        view-timeline-name: --scrolly-parallax;
+        > * {
+            position: relative;
+            animation-timeline: --scroll-section;
+            animation-range: cover -15% cover 60%;
+            animation-timing-function: var(--open-props-animation-timing-ease-2);
+            animation-name: scrolly-pull-up;
+
+            --scrolly-move-by: 10vh;
+
+            &:not(:first-child) {
+                --scrolly-move-by: calc(sibling-index() * 2vh);
             }
         }
     }
