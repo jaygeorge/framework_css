@@ -1826,6 +1826,27 @@ nav ul {
 @layer utilities {
     /* If they're OK with animation */
     @media (prefers-reduced-motion: no-preference) {
+        @keyframes scrolly-fade-in-up {
+            0%, 30% {
+                top: var(--scrolly-move-by, 5vh);
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+                top: 0;
+            }
+        }
+        .u-scrolly-fade-in-children,
+        .u-scrolly-fade-in-up-children {
+            view-timeline-name: --scroll-section;
+            > * {
+                animation-timeline: --scroll-section;
+                animation-range: cover -15% cover 70%;
+                animation-timing-function: var(--animation-timing-function-in-quadratic);
+            }
+        }
+         /* GROUP UTILITIES / FRAMEWORK / SCROLLY / FADE IN
+        =================================================== */
         @keyframes scrolly-fade-in {
             0%, 30% {
                 opacity: 0;
@@ -1837,16 +1858,122 @@ nav ul {
                 opacity: 1;
             }
         }
-        @keyframes scrolly-fade-in-up {
-            0%, 30% {
-                top: var(--scrolly-move-by, 5vh);
-                opacity: 0;
+        .u-scrolly-fade-in {
+            animation-timeline: view();
+            animation-range: cover -50% cover 115%;
+            animation-timing-function: linear;
+            animation-name: scrolly-fade-in;
+        }
+        /* GROUP UTILITIES / FRAMEWORK / SCROLLY / FADE IN CHILDREN
+        =================================================== */
+        .u-scrolly-fade-in-children {
+            > * {
+                animation-name: scrolly-fade-in;
+    
+                &:nth-child(2) { --scrolly-stagger: 40%; }
+                &:nth-child(3) { --scrolly-stagger: 20%; }
+                &:nth-child(4) { --scrolly-stagger: 10%; }
             }
-            100% {
-                opacity: 1;
-                top: 0;
+            /* If has at least 5 children, spread out the stagger more */
+            &:has(> :nth-child(5)) > * {
+                &:nth-child(2) { --scrolly-stagger: 45%; }
+                &:nth-child(3) { --scrolly-stagger: 40%; }
+                &:nth-child(4) { --scrolly-stagger: 35%; }
+                &:nth-child(5) { --scrolly-stagger: 30%; }
+                &:nth-child(6) { --scrolly-stagger: 25%; }
+                &:nth-child(7) { --scrolly-stagger: 20%; }
+                &:nth-child(8) { --scrolly-stagger: 15%; }
+                &:nth-child(9) { --scrolly-stagger: 10%; }
+                &:nth-child(10) { --scrolly-stagger: 5%; }
+                &:nth-child(n+11) { --scrolly-stagger: 0%; }
             }
         }
+        /* GROUP UTILITIES / FRAMEWORK / SCROLLY / FADE IN UP CHILDREN
+        =================================================== */
+        .u-scrolly-fade-in-up-children {
+            > * {
+                position: relative;
+                animation-name: scrolly-fade-in-up;
+    
+                --scrolly-move-by: 1vh;
+                &:not(:first-child) {
+                    --scrolly-move-by: calc(sibling-index() * 2vh);
+                }
+            }
+        }
+        /* GROUP UTILITIES / FRAMEWORK / SCROLLY / FADE IN UP CHILDREN (no support for sibling-index)
+        =================================================== */
+        .u-scrolly-fade-in-up-children {
+            > * {
+                position: relative;
+                animation-name: scrolly-fade-in-up;
+    
+                &:not(:first-child) {
+                    --scrolly-delay: --scrolly-move-by: calc(0vh + sibling-index() * 5);
+                }
+    
+                &:nth-child(2) { --scrolly-move-by: 10vh; }
+                &:nth-child(3) { --scrolly-move-by: 15vh; }
+                &:nth-child(4) { --scrolly-move-by: 20vh; }
+            }
+            /* If has at least 5 children, spread out the stagger more */
+            &:has(> :nth-child(5)) > * {
+                &:nth-child(2) { --scrolly-move-by: 5vh; }
+                &:nth-child(3) { --scrolly-move-by: 7.5vh; }
+                &:nth-child(4) { --scrolly-move-by: 10vh; }
+                &:nth-child(5) { --scrolly-move-by: 12.5vh; }
+                &:nth-child(6) { --scrolly-move-by: 15vh; }
+                &:nth-child(7) { --scrolly-move-by: 17.5vh; }
+                &:nth-child(8) { --scrolly-move-by: 20vh; }
+                &:nth-child(9) { --scrolly-move-by: 22.5vh; }
+                &:nth-child(10) { --scrolly-move-by: 25vh; }
+                &:nth-child(n+11) { --scrolly-move-by: 27.5vh; }
+            }
+        }
+        /* GROUP UTILITIES / FRAMEWORK / SCROLLY / PARALLAX / VIEW
+        =================================================== */
+        @keyframes scrolly-parallax {
+            to {
+                transform: translateY(var(--scrolly-move-by));
+            }
+        }
+        /* Notes...
+    
+            - This is based on the picture elements being absolutely positioned
+    
+        */
+        .u-scrolly-parallax-images-view {
+            view-timeline-name: --scrolly-parallax;
+            --scrolly-move-by: -10vh;
+            will-change: transform;
+            animation: scrolly-parallax auto linear;
+            animation-timeline: view();
+            animation-range: cover 0% cover 100%;
+        }
+        /* GROUP UTILITIES / FRAMEWORK / SCROLLY / PARALLAX
+        =================================================== */
+        /* Notes...
+    
+            - This is based on the picture elements being absolutely positioned
+    
+        */
+        .u-scrolly-parallax-images {
+            view-timeline-name: --scrolly-parallax;
+            & picture, svg {
+                --scrolly-move-by: -10vh;
+                will-change: transform;
+                animation: scrolly-parallax auto linear;
+                animation-timeline: --scrolly-parallax;
+                animation-range: cover 40% cover 100%;
+    
+                &:nth-of-type(3),
+                &:nth-of-type(4) {
+                    --scrolly-move-by: -30vh;
+                }
+            }
+        }
+        /* GROUP UTILITIES / FRAMEWORK / SCROLLY / PARALLAX / CHILDREN
+        =================================================== */
         @keyframes scrolly-pull-up {
             0%, 30% {
                 top: var(--scrolly-move-by, 5vh);
@@ -1855,152 +1982,33 @@ nav ul {
                 top: 0;
             }
         }
-        @keyframes scrolly-parallax {
-            to {
-                transform: translateY(var(--scrolly-move-by));
+        /* I haven't tested this yet */
+        .u-scrolly-parallax-children {
+            view-timeline-name: --scrolly-parallax;
+            > * {
+                position: relative;
+                animation-timeline: --scroll-section;
+                animation-range: cover -15% cover 60%;
+                animation-timing-function: var(--open-props-animation-timing-ease-2);
+                animation-name: scrolly-pull-up;
+    
+                --scrolly-move-by: 10vh;
+    
+                &:not(:first-child) {
+                    --scrolly-move-by: calc(sibling-index() * 2vh);
+                }
             }
         }
-    }
-    .u-scrolly-fade-in-children,
-    .u-scrolly-fade-in-up-children {
-        view-timeline-name: --scroll-section;
-        > * {
-            animation-timeline: --scroll-section;
-            animation-range: cover -15% cover 70%;
-            animation-timing-function: var(--animation-timing-function-in-quadratic);
-        }
-    }
-    /* GROUP UTILITIES / FRAMEWORK / SCROLLY / FADE IN CHILDREN
-    =================================================== */
-    .u-scrolly-fade-in-children {
-        > * {
-            animation-name: scrolly-fade-in;
-
-            &:nth-child(2) { --scrolly-stagger: 40%; }
-            &:nth-child(3) { --scrolly-stagger: 20%; }
-            &:nth-child(4) { --scrolly-stagger: 10%; }
-        }
-        /* If has at least 5 children, spread out the stagger more */
-        &:has(> :nth-child(5)) > * {
-            &:nth-child(2) { --scrolly-stagger: 45%; }
-            &:nth-child(3) { --scrolly-stagger: 40%; }
-            &:nth-child(4) { --scrolly-stagger: 35%; }
-            &:nth-child(5) { --scrolly-stagger: 30%; }
-            &:nth-child(6) { --scrolly-stagger: 25%; }
-            &:nth-child(7) { --scrolly-stagger: 20%; }
-            &:nth-child(8) { --scrolly-stagger: 15%; }
-            &:nth-child(9) { --scrolly-stagger: 10%; }
-            &:nth-child(10) { --scrolly-stagger: 5%; }
-            &:nth-child(n+11) { --scrolly-stagger: 0%; }
-        }
-    }
-    /* GROUP UTILITIES / FRAMEWORK / SCROLLY / FADE IN UP CHILDREN
-    =================================================== */
-    .u-scrolly-fade-in-up-children {
-        > * {
-            position: relative;
-            animation-name: scrolly-fade-in-up;
-
-            --scrolly-move-by: 1vh;
-            &:not(:first-child) {
-                --scrolly-move-by: calc(sibling-index() * 2vh);
+        /* GROUP UTILITIES / FRAMEWORK / SCROLLY / ROTATE
+        =================================================== */
+        .u-scrolly-rotate {
+            --scrolly-rotate-by: 35deg;
+            & picture, svg {
+                will-change: transform;
+                animation: scrolly-rotate auto linear;
+                animation-timeline: --scrolly-rotate;
+                animation-timeline: view();
             }
-        }
-    }
-    /* GROUP UTILITIES / FRAMEWORK / SCROLLY / FADE IN UP CHILDREN (no support for sibling-index)
-    =================================================== */
-    .u-scrolly-fade-in-up-children {
-        > * {
-            position: relative;
-            animation-name: scrolly-fade-in-up;
-
-            &:not(:first-child) {
-                --scrolly-delay: --scrolly-move-by: calc(0vh + sibling-index() * 5);
-            }
-
-            &:nth-child(2) { --scrolly-move-by: 10vh; }
-            &:nth-child(3) { --scrolly-move-by: 15vh; }
-            &:nth-child(4) { --scrolly-move-by: 20vh; }
-        }
-        /* If has at least 5 children, spread out the stagger more */
-        &:has(> :nth-child(5)) > * {
-            &:nth-child(2) { --scrolly-move-by: 5vh; }
-            &:nth-child(3) { --scrolly-move-by: 7.5vh; }
-            &:nth-child(4) { --scrolly-move-by: 10vh; }
-            &:nth-child(5) { --scrolly-move-by: 12.5vh; }
-            &:nth-child(6) { --scrolly-move-by: 15vh; }
-            &:nth-child(7) { --scrolly-move-by: 17.5vh; }
-            &:nth-child(8) { --scrolly-move-by: 20vh; }
-            &:nth-child(9) { --scrolly-move-by: 22.5vh; }
-            &:nth-child(10) { --scrolly-move-by: 25vh; }
-            &:nth-child(n+11) { --scrolly-move-by: 27.5vh; }
-        }
-    }
-    /* GROUP UTILITIES / FRAMEWORK / SCROLLY / PARALLAX / VIEW
-    =================================================== */
-    /* Notes...
-
-        - This is based on the picture elements being absolutely positioned
-
-    */
-    .u-scrolly-parallax-images-view {
-        view-timeline-name: --scrolly-parallax;
-        --scrolly-move-by: -10vh;
-        will-change: transform;
-        animation: scrolly-parallax auto linear;
-        animation-timeline: view();
-        animation-range: cover 0% cover 100%;
-    }
-    /* GROUP UTILITIES / FRAMEWORK / SCROLLY / PARALLAX
-    =================================================== */
-    /* Notes...
-
-        - This is based on the picture elements being absolutely positioned
-
-    */
-    .u-scrolly-parallax-images {
-        view-timeline-name: --scrolly-parallax;
-        & picture, svg {
-            --scrolly-move-by: -10vh;
-            will-change: transform;
-            animation: scrolly-parallax auto linear;
-            animation-timeline: --scrolly-parallax;
-            animation-range: cover 40% cover 100%;
-
-            &:nth-of-type(3),
-            &:nth-of-type(4) {
-                --scrolly-move-by: -30vh;
-            }
-        }
-    }
-    /* GROUP UTILITIES / FRAMEWORK / SCROLLY / PARALLAX / CHILDREN
-    =================================================== */
-    /* I haven't tested this yet */
-    .u-scrolly-parallax-children {
-        view-timeline-name: --scrolly-parallax;
-        > * {
-            position: relative;
-            animation-timeline: --scroll-section;
-            animation-range: cover -15% cover 60%;
-            animation-timing-function: var(--open-props-animation-timing-ease-2);
-            animation-name: scrolly-pull-up;
-
-            --scrolly-move-by: 10vh;
-
-            &:not(:first-child) {
-                --scrolly-move-by: calc(sibling-index() * 2vh);
-            }
-        }
-    }
-    /* GROUP UTILITIES / FRAMEWORK / SCROLLY / ROTATE
-    =================================================== */
-    .u-scrolly-rotate {
-        --scrolly-rotate-by: 35deg;
-        & picture, svg {
-            will-change: transform;
-            animation: scrolly-rotate auto linear;
-            animation-timeline: --scrolly-rotate;
-            animation-timeline: view();
         }
     }
 }
