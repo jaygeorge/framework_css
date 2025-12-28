@@ -89,8 +89,8 @@
 
 /* Modal content */
 .js__modalBox__inner-scroll > *:first-child {
-    padding-block-start: var(--spacing-l);
-    padding-block-end: var(--spacing-l);
+    padding-block-start: var(--spacing-xl);
+    padding-block-end: var(--spacing-xl);
 }
 
 .js__closeModal {
@@ -128,7 +128,7 @@
     position: absolute;
     top: 0;
     width: 100%;
-    height: calc(var(--spacing-l) * 3);
+    height: calc(var(--spacing-xl) * 3);
     background: linear-gradient(to bottom, white 25%,transparent 100%);
 }
 

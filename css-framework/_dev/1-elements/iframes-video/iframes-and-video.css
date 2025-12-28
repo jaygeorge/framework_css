@@ -16,7 +16,7 @@
 .o-responsive-video {
     max-width: var(--max-width-1);
     margin-inline: auto;
-    margin-block-end: var(--spacing-l-1);
+    margin-block-end: var(--spacing-2xl);
 }
 
 .o-responsive-video__inner-wrapper {
@@ -40,7 +40,7 @@
 /* Custom */
 @media (min-width: 768px) {
     .o-responsive-video {
-        padding-inline: var(--spacing-m);
+        padding-inline: var(--spacing-lg);
     }
 }
 
@@ -48,7 +48,7 @@
 @media (min-width: 1400px) {
     .o-responsive-video {
         /* Increase */
-        margin-block-end: var(--spacing-l-2);
+        margin-block-end: var(--spacing-3xl);
     }
 }
 
@@ -93,19 +93,19 @@ p + .js__videoLazyLoad {
 
 /* .js--video + p + .js--video, */
 .js__videoLazyLoad + p + .js__videoLazyLoad {
-    margin-top: var(--spacing-m);
+    margin-top: var(--spacing-lg);
 }
 
 .no-js iframe {
     /* Where we don't have JS hook for padding */
-    margin-block-end: var(--spacing-l-1);
+    margin-block-end: var(--spacing-2xl);
 }
 
 .js--video {
-    margin-block-end: var(--spacing-l);
+    margin-block-end: var(--spacing-xl);
 }
 
 p + .js--video,
 .js--video + p {
-    margin-top: var(--spacing-s-1);
+    margin-top: var(--spacing-md);
 }

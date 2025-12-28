@@ -62,8 +62,8 @@
 /* GROUP COMPONENTS / PAGINATION / PERCH / SPACING
 =================================================== */
 .paging {
-    padding-inline-start: var(--spacing-l);
-    padding-inline-end: var(--spacing-l);
+    padding-inline-start: var(--spacing-xl);
+    padding-inline-end: var(--spacing-xl);
 }
 
 .paging .c-btn,
@@ -77,19 +77,19 @@
 }
 
 .paging .c-btn {
-    margin-top: var(--spacing-l);
+    margin-top: var(--spacing-xl);
 }
 
 .paging .c-btn a {
     /* Needed for when previous and next are side by side. This should already be set as flex by the Atoms > Buttons group */
     /* display: flex; */
-    margin-block-end: var(--spacing-m);
+    margin-block-end: var(--spacing-lg);
 }
 
 @media (min-width: 400px) {
     .c-btn--pagination + .c-btn--pagination {
         /* Increase */
-        margin-left: var(--spacing-m);
+        margin-left: var(--spacing-lg);
     }
 }
 /* GROUP COMPONENTS / PAGINATION / PERCH

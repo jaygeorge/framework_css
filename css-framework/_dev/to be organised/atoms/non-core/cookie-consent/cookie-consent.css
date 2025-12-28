@@ -45,13 +45,13 @@
 /* GROUP ATOMS / (NON CORE) / COOKIE CONSENT / SPACING
 =================================================== */
 .c-cookie-consent {
-    padding: var(--spacing-s-1) var(--spacing-l);
+    padding: var(--spacing-md) var(--spacing-xl);
     /* Need to use max-width rather than margin to keep this container centered */
     max-width: calc(100% - var(--spacing-s) * 2);
 }
 
 .c-cookie-consent button {
-    margin-left: var(--spacing-m);
+    margin-left: var(--spacing-lg);
     /* Cancel default */
     margin-right: 0;
 }

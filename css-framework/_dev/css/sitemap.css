@@ -28,11 +28,11 @@
 /* GROUP COMPONENTS / SITEMAP / SPACING
 =================================================== */
 .c-sitemap {
-    padding-inline-start: var(--spacing-l);
+    padding-inline-start: var(--spacing-xl);
 }
 
 .c-sitemap li ul {
-    padding-inline-start: var(--spacing-s-1);
+    padding-inline-start: var(--spacing-md);
 }
 
 .c-sitemap li ul {

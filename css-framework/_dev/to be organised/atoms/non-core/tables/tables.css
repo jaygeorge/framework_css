@@ -9,7 +9,7 @@
 */
 @layer elements {
     .c-table {
-        margin-block-end: var(--spacing-m-2);
+        margin-block-end: var(--spacing-lg-2);
     }
 
     table {

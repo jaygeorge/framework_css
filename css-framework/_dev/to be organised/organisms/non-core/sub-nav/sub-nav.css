@@ -15,8 +15,8 @@ ul/*o-*/.sub-menu {
     top: 0;
     right: 0;
     padding: var(--spacing-s-x-x) var(--spacing-s);
-    padding-inline-end: var(--spacing-l-static);
-    margin-top: var(--spacing-s-1);
+    padding-inline-end: var(--spacing-xl-static);
+    margin-top: var(--spacing-md);
     font-size: 1.1em;
     color: var(--color-gray-reading);
 }

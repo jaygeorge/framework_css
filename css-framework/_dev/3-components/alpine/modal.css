@@ -91,7 +91,7 @@
 .c-alpine-modal__buttons {
     display: flex;
     justify-content: center;
-    gap: var(--spacing-m);
+    gap: var(--spacing-lg);
 }
 /* GROUP COMPONENTS / ALPINE / MODAL / SPACING
 =================================================== */

@@ -32,9 +32,9 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: var(--spacing-m);
+        gap: var(--spacing-lg);
 
-        padding: var(--spacing-l-1);
+        padding: var(--spacing-2xl);
         text-align: center;
         &:last-child {
             padding-block-end: 0;
@@ -42,7 +42,7 @@
         /* --mq-max-width-reading-before */
         @media (max-width: 599px) {
             text-align: left;
-            padding-inline-start: var(--spacing-l);
+            padding-inline-start: var(--spacing-xl);
         }
         /* GROUP OBJECTS / FRAMEWORK / HERO BUTTONS { / BUTTON HERO} / SPACING MODIFICATIONS
         =================================================== */
@@ -51,7 +51,7 @@
         }
 
         :where(h2) + & {
-            padding-block-start: var(--spacing-s-1);
+            padding-block-start: var(--spacing-md);
         }
     }
 }

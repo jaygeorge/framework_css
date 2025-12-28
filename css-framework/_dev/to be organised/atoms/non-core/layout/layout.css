@@ -78,8 +78,8 @@
         END FLEXBOX GRID - GUTTERS
         -------------------------------------
         max-width: var(--max-width-reading);
-        padding-inline-start: var(--spacing-l);
-        padding-inline-end: var(--spacing-l);
+        padding-inline-start: var(--spacing-xl);
+        padding-inline-end: var(--spacing-xl);
     }
 
     .someparent__child {
@@ -772,125 +772,125 @@ nav::after,
 
 
 .u-padding-bottom-s-1 {
-    padding-bottom: var(--spacing-s-1)!important;
+    padding-bottom: var(--spacing-md)!important;
 }
 
 .u-padding-block-start-s-1 {
-    padding-block-start: var(--spacing-s-1)!important;
+    padding-block-start: var(--spacing-md)!important;
 }
 
 .u-margin-block-end-s-1 {
-    margin-block-end: var(--spacing-s-1)!important;
+    margin-block-end: var(--spacing-md)!important;
 }
 
 .u-margin-top-s-1 {
-    margin-top: var(--spacing-s-1)!important;
+    margin-top: var(--spacing-md)!important;
 }
 
 
 
 .u-padding-bottom-s-2 {
-    padding-bottom: var(--spacing-s-2)!important;
+    padding-bottom: var(--spacing-xs)!important;
 }
 
 .u-padding-block-start-s-2 {
-    padding-block-start: var(--spacing-s-2)!important;
+    padding-block-start: var(--spacing-xs)!important;
 }
 
 .u-margin-block-end-s-2 {
-    margin-block-end: var(--spacing-s-2)!important;
+    margin-block-end: var(--spacing-xs)!important;
 }
 
 .u-margin-top-s-2 {
-    margin-top: var(--spacing-s-2)!important;
+    margin-top: var(--spacing-xs)!important;
 }
 
 
 
 .u-padding-bottom-m {
-    padding-bottom: var(--spacing-m)!important;
+    padding-bottom: var(--spacing-lg)!important;
 }
 
 .u-padding-block-start-m {
-    padding-block-start: var(--spacing-m)!important;
+    padding-block-start: var(--spacing-lg)!important;
 }
 
 .u-margin-block-end-m {
-    margin-block-end: var(--spacing-m)!important;
+    margin-block-end: var(--spacing-lg)!important;
 }
 
 .u-margin-top-m {
-    margin-top: var(--spacing-m)!important;
+    margin-top: var(--spacing-lg)!important;
 }
 
 
 
 .u-padding-bottom-l {
-    padding-bottom: var(--spacing-l)!important;
+    padding-bottom: var(--spacing-xl)!important;
 }
 
 .u-padding-block-start-l {
-    padding-block-start: var(--spacing-l)!important;
+    padding-block-start: var(--spacing-xl)!important;
 }
 
 .u-margin-block-end-l {
-    margin-block-end: var(--spacing-l)!important;
+    margin-block-end: var(--spacing-xl)!important;
 }
 
 .u-margin-top-l {
-    margin-top: var(--spacing-l)!important;
+    margin-top: var(--spacing-xl)!important;
 }
 
 
 
 .u-padding-bottom-l-1 {
-    padding-bottom: var(--spacing-l-1)!important;
+    padding-bottom: var(--spacing-2xl)!important;
 }
 
 .u-padding-block-start-l-1 {
-    padding-block-start: var(--spacing-l-1)!important;
+    padding-block-start: var(--spacing-2xl)!important;
 }
 
 .u-margin-block-end-l-1 {
-    margin-block-end: var(--spacing-l-1)!important;
+    margin-block-end: var(--spacing-2xl)!important;
 }
 
 .u-margin-top-l-1 {
-    margin-top: var(--spacing-l-1)!important;
+    margin-top: var(--spacing-2xl)!important;
 }
 
 
 
 .u-padding-bottom-l-2 {
-    padding-bottom: var(--spacing-l-2)!important;
+    padding-bottom: var(--spacing-3xl)!important;
 }
 
 .u-padding-block-start-l-2 {
-    padding-block-start: var(--spacing-l-2)!important;
+    padding-block-start: var(--spacing-3xl)!important;
 }
 
 .u-margin-top-l-2 {
-    margin-top: var(--spacing-l-2)!important;
+    margin-top: var(--spacing-3xl)!important;
 }
 
 .u-margin-block-end-l-2 {
-    margin-block-end: var(--spacing-l-2)!important;
+    margin-block-end: var(--spacing-3xl)!important;
 }
 
 
 
 .u-margin-top-l-2-1 {
-    margin-top: var(--spacing-l-2-1)!important;
+    margin-top: var(--spacing-3xl-1)!important;
 }
 
 
 
 .u-padding-block-start-l-3 {
-    padding-block-start: var(--spacing-l-3)!important;
+    padding-block-start: var(--spacing-4xl)!important;
 }
 
 .u-margin-top-l-3 {
-    margin-top: var(--spacing-l-3)!important;
+    margin-top: var(--spacing-4xl)!important;
 }
 
 

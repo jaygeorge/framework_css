@@ -33,17 +33,17 @@
 
         /* Override any more complex rules like .s-entry-content:last-child */
         &, &:last-child {
-            padding: var(--spacing-l);
-            margin-block-end: var(--spacing-l-2);
+            padding: var(--spacing-xl);
+            margin-block-end: var(--spacing-3xl);
         }
 
         & h2 {
-            padding-block-end: var(--spacing-m);
+            padding-block-end: var(--spacing-lg);
     
             font-size: var(--font-size-xs);
             border-bottom: 1px solid var(--color-gray-light-2);
             &:not(:first-child) {
-                padding-block-start: var(--spacing-l-1);
+                padding-block-start: var(--spacing-2xl);
             }
         }
         & :is(h3, h4) {
@@ -64,7 +64,7 @@
     /* GROUP ELEMENTS / TABLES
     =================================================== */
     table + h2 {
-        padding-block-start: var(--spacing-s-1);
+        padding-block-start: var(--spacing-md);
     }
 
     /* GROUP FRAMEWORK / NON CORE / TABLE WRAPPER
@@ -81,7 +81,7 @@
         wrapper.classList.add('js--tableWrapper');
     }); */
     .js--tableWrapper {
-        margin-bottom: var(--spacing-m-2);
+        margin-bottom: var(--spacing-lg-2);
     }
     /* GROUP PLUGIN / BOOTSTRAP / TABLES
     =================================================== */
@@ -204,7 +204,7 @@
     }
 
     table + h2 {
-        padding-block-start: var(--spacing-s-1);
+        padding-block-start: var(--spacing-md);
     }
     /* GROUP MOLECULES / TABLES / BOOTSTRAP / (JAY ADDED) / HIGHLIGHT TODAYS DATE
     =================================================== */

@@ -15,7 +15,7 @@
     background: white;
 
     display: grid;
-    gap: var(--spacing-s-1);
+    gap: var(--spacing-md);
 }
 
 .o-alpine-dropdown-panel__item {
@@ -24,7 +24,7 @@
 /* GROUP ALPINE COMPONENTS / DROPDOWN / SPACING
 =================================================== */
 .o-alpine-dropdown-panel {
-    padding: var(--spacing-s-2) var(--spacing-m);
+    padding: var(--spacing-xs) var(--spacing-lg);
     margin-block-start: var(--spacing-s-x);
 }
 
@@ -119,7 +119,7 @@
 =================================================== */
 .o-alpine-modal__panel,
 .o-alpine-modal__panel__inner {
-    padding: var(--spacing-l);
+    padding: var(--spacing-xl);
 }
 /* GROUP ALPINE COMPONENTS / MODAL / DECORATION
 =================================================== */
@@ -231,17 +231,17 @@
 .o-alpine-accordion {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-s-1);
+    gap: var(--spacing-md);
 
     margin-inline: auto;
-    margin-block-end: var(--spacing-l);
+    margin-block-end: var(--spacing-xl);
     max-width: var(--max-width-1);
 }
 
 .o-alpine-accordion__text {
     max-width: 70rem;
-    padding-inline: var(--spacing-l);
-    padding-block-end: var(--spacing-l-1);
+    padding-inline: var(--spacing-xl);
+    padding-block-end: var(--spacing-2xl);
 }
 
 .o-alpine-accordion__item {
@@ -256,7 +256,7 @@
     align-items: center;
     justify-content: space-between;
 
-    padding: var(--spacing-m) var(--spacing-l);
+    padding: var(--spacing-lg) var(--spacing-xl);
 
     line-height: var(--font-size-s-line-height);
     text-align: left;
@@ -287,7 +287,7 @@
 }
 
 .o-alpine-accordion__text ul {
-    padding-block-end: var(--spacing-s-1);
+    padding-block-end: var(--spacing-md);
     padding-inline-start: 0.8rem;
     list-style: circle;
 }
