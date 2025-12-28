@@ -150,17 +150,17 @@ scope-ui;
     /* GROUP VARIABLES -- DECORATION -- TEXT -- SIZES
     =================================================== */
     /* Where you may want to space the line-height slightly e.g. You may want to use -spaced because a paragraph contains short information and links, so you'd like to make it breathe a bit more. Use _sparingly_ since it exceeds the max recommended line-height of 1.5 */
-    --font-size-spaced-line-height: 1.6;
+    --font-size-smpaced-line-height: 1.6;
 
     /* If a font is outside a used scale then you should add a Capitalised Heading above it with the note "Outside Scale" to denote that this is a conscious decision. For example, if you are using the Augmented Fourth scale.. */
 
     /* Outside Scale */
-    --font-size-l: clamp(2.5em * 0.8, 9vw, 2.5em); /* e.g. >> Home > .c-display-title */
+    --font-size-lg: clamp(2.5em * 0.8, 9vw, 2.5em); /* e.g. >> Home > .c-display-title */
     /* GROUP VARIABLES -- DECORATION -- TEXT -- SIZES -- DIFFERENT FONT
     =================================================== */
     /* Use variable names like this if you have a mixture of larger fonts with different typefaces that need different sizes */
-    /* --font-size-l-decorative: ; */
-    /* --font-size-l-line-height-decorative: ; */
+    /* --font-size-lg-decorative: ; */
+    /* --font-size-lg-line-height-decorative: ; */
     /* --font-size-xl-decorative: ; */
     /* --font-size-xl-line-height-decorative: ; */
 
@@ -174,46 +174,46 @@ scope-ui;
     /* GROUP VARIABLES -- DECORATION -- TEXT -- SIZES -- PERFECT FIFTH
     =================================================== */
     /* Based on Perfect Fifth - https://type-scale.com/ */
-    --font-size-s-x-x: 0.667rem;
+    --font-size-sm-x-x: 0.667rem;
 
     /* Outside type scale */
-    --font-size-s: clamp(1.3em * 0.85, 4vw, 1.3em);
-    --font-size-s-line-height: 1.4;
+    --font-size-sm: clamp(1.3em * 0.85, 4vw, 1.3em);
+    --font-size-sm-line-height: 1.4;
     /* -- */
 
-    --font-size-s: clamp(1.4em, 4vw, 1.5em);
-    --font-size-s-line-height: 1.4;
+    --font-size-sm: clamp(1.4em, 4vw, 1.5em);
+    --font-size-sm-line-height: 1.4;
 
-    --font-size-m: clamp(2.25em * 0.695, 5.9vw, 2.25em);
-    --font-size-m-line-height: 1.35;
+    --font-size-md: clamp(2.25em * 0.695, 5.9vw, 2.25em);
+    --font-size-md-line-height: 1.35;
 
-    --font-size-l: clamp(3.375em * 0.8, 5.9vw, 3.375em);
-    --font-size-l-line-height: 1.15;
+    --font-size-lg: clamp(3.375em * 0.8, 5.9vw, 3.375em);
+    --font-size-lg-line-height: 1.15;
 
-    --font-size-l: clamp(5.063em * 0.725, 6vw, 5.063em);
-    --font-size-l-line-height: 1.05;
+    --font-size-lg: clamp(5.063em * 0.725, 6vw, 5.063em);
+    --font-size-lg-line-height: 1.05;
 
     --font-size-xl: clamp(7.594em * 0.7, 15vw, 7.594em);
     --font-size-xl-line-height: 1;
     /* GROUP VARIABLES -- DECORATION -- TEXT -- SIZES -- GOLDEN RATIO
     =================================================== */
     /* Based on Golden Ratio - https://type-scale.com/ */
-    --font-size-s-x-x: 0.618em;
-    --font-size-s-x-x-custom: 0.73em;
-    --font-size-s-x-x-rem: 0.618rem;
+    --font-size-sm-x-x: 0.618em;
+    --font-size-sm-x-x-custom: 0.73em;
+    --font-size-sm-x-x-rem: 0.618rem;
 
     /* Custom, 0.8rem is too small */
-    --font-size-s-x: 0.85em;
+    --font-size-sm-x: 0.85em;
 
-    --font-size-m: 1.618em;
-    --font-size-m-line-height: 1.4;
+    --font-size-md: 1.618em;
+    --font-size-md-line-height: 1.4;
 
-    --font-size-l: clamp(2.618em * 0.65, 7vw, 2.618em);
-    --font-size-l-line-height: 1.25;
-    --font-size-l-line-height-entry: 1.1;
+    --font-size-lg: clamp(2.618em * 0.65, 7vw, 2.618em);
+    --font-size-lg-line-height: 1.25;
+    --font-size-lg-line-height-entry: 1.1;
 
-    --font-size-l: clamp(4.236em * 0.6, 10vw, 4.236em);
-    --font-size-l-line-height: 1.15;
+    --font-size-lg: clamp(4.236em * 0.6, 10vw, 4.236em);
+    --font-size-lg-line-height: 1.15;
 
     --font-size-xl: clamp(6.854em * 0.7, 13.5vw, 6.854em);
     --font-size-xl-line-height: 0.99;
@@ -222,8 +222,8 @@ scope-ui;
     /* GROUP VARIABLES -- DECORATION -- ICONS -- SIZES
     =================================================== */
     --icon-size-s: 1.35rem;
-    --icon-size-m: 1.5rem;
-    --icon-size-m-2: 1.8rem;
+    --icon-size-md: 1.5rem;
+    --icon-size-md-2: 1.8rem;
     --icon-size-l: 3rem;
     --icon-size-l-2: 5rem;
     /* GROUP VARIABLES -- DECORATION -- TEXT -- OTHER
@@ -245,7 +245,7 @@ scope-ui;
     /* GROUP VARIABLES -- DECORATION -- BORDER RADIUS
     =================================================== */
     --border-radius-s: 3px;
-    --border-radius-m: 5px;
+    --border-radius-md: 5px;
     --border-radius-l: 7px;
     /* GROUP VARIABLES -- DECORATION -- SEPARATORS -- BOX SHADOWS - ordered from light to dark variants
     =================================================== */
@@ -392,8 +392,8 @@ scope-ui;
 /* Fallback for browsers that don't support clamp e.g. my iPad Mini */
 /* @supports not (font-size: clamp(calc(3.052em * 0.8), 11vw, 3.052em)) {
     :root {
-        --font-size-l: 2.441em;
-        --font-size-l: 3.052em;
+        --font-size-lg: 2.441em;
+        --font-size-lg: 3.052em;
         --font-size-xl-entry: 3.4em;
     }
 } */
@@ -536,14 +536,14 @@ scope-ui;
             position: absolute;
             top: -0.3em;
             left: 0.4em;
-            font-size: var(--font-size-m);
+            font-size: var(--font-size-md);
             color: var(--color-gray-light-1);
         }
     }
 
     figcaption {
         padding-block-start: var(--spacing-s);
-        font-size: var(--font-size-s-x);
+        font-size: var(--font-size-sm-x);
         font-style: italic;
     }
 
@@ -1234,7 +1234,7 @@ nav ul {
             padding-block-end: var(--spacing-lg);
         }
         .entry-time {
-            font-size: var(--font-size-s-x);
+            font-size: var(--font-size-sm-x);
         }
     }
 }
@@ -1545,7 +1545,7 @@ nav ul {
         font-size: var(--icon-size-s);
     }
     .u-icon-m {
-        font-size: var(--icon-size-m);
+        font-size: var(--icon-size-md);
     }
     /* If they're OK with animation */
     @media (prefers-reduced-motion: no-preference) {

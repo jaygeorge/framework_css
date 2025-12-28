@@ -129,7 +129,7 @@
 
 .o-alpine-modal__panel__inner {
     background: white;
-    border-radius: var(--border-radius-m);
+    border-radius: var(--border-radius-md);
 }
 
 
@@ -258,7 +258,7 @@
 
     padding: var(--spacing-lg) var(--spacing-xl);
 
-    line-height: var(--font-size-s-line-height);
+    line-height: var(--font-size-sm-line-height);
     text-align: left;
     text-transform: uppercase;
     letter-spacing: var(--letter-spacing-s);
@@ -283,7 +283,7 @@
     padding-block-end: 0;
 
     font-family: var(--font-family-info);
-    font-size: var(--font-size-s);
+    font-size: var(--font-size-sm);
 }
 
 .o-alpine-accordion__text ul {

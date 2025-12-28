@@ -58,7 +58,7 @@
 /* GROUP ATOMS / (NON CORE) / COOKIE CONSENT / DECORATION
 =================================================== */
 .c-cookie-consent {
-    font-size: var(--font-size-s-x-x);
+    font-size: var(--font-size-sm-x-x);
     text-align: center;
     background: white;
     border: none;

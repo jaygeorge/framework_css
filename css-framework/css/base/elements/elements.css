@@ -238,16 +238,16 @@
         font-size: var(--font-size-xl); line-height: var(--font-size-xl-line-height);
     }
     h3, .h3 {
-        font-size: var(--font-size-m); line-height: var(--font-size-s-line-height);
+        font-size: var(--font-size-md); line-height: var(--font-size-sm-line-height);
     }
     h4, .h4 {
-        font-size: var(--font-size-l); line-height: var(--font-size-l-line-height);
+        font-size: var(--font-size-lg); line-height: var(--font-size-lg-line-height);
     }
     h5, .h5 {
-        font-size: var(--font-size-m); line-height: var(--font-size-s-line-height);
+        font-size: var(--font-size-md); line-height: var(--font-size-sm-line-height);
     }
     h6, .h6 {
-        font-size: var(--font-size-s-1); line-height: var(--font-size-s-1-line-height);
+        font-size: var(--font-size-sm-1); line-height: var(--font-size-sm-1-line-height);
     }
     /* GROUP ELEMENTS / FRAMEWORK / HEADINGS / HIGH PRIORITY / VERTICAL SPACING
     =================================================== */

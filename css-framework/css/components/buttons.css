@@ -23,7 +23,7 @@
         /* I've found it more stable to use pxls rather than ems. */
         --button-spacing: var(--button-spacing-vertical) var(--button-spacing-inline);
         padding: var(--button-spacing);
-        font-size: var(--font-size-s);
+        font-size: var(--font-size-sm);
         font-weight: var(--font-family-main-weight-strong);
         text-decoration-line: none;
         /* Hover states with a slight delay, but focus without any because keyboard users want quick feedback. Do not use 'all' because it resizes slowly when resizing the browser window */
@@ -78,7 +78,7 @@
     [type="submit"] {
         background: var(--color-primary-accent);
         color: white;
-        border-radius: var(--border-radius-m);
+        border-radius: var(--border-radius-md);
     }
     /* GROUP COMPONENTS / FRAMEWORK / BUTTONS / ACCESSIBILITY / HOVER
     =================================================== */
@@ -93,7 +93,7 @@
     /* 2 */
     .c-btn--2 {
         background: var(--color-gray-background);
-        border-radius: var(--border-radius-m);
+        border-radius: var(--border-radius-md);
     }
 
     /* Inline */

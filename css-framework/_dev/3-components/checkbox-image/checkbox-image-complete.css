@@ -96,5 +96,5 @@
     background: var(--color-green-light);
     color: var(--color-green-dark);
     border-radius: 50px;
-    font-size: var(--icon-size-m);
+    font-size: var(--icon-size-md);
 }

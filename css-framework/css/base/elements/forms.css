@@ -361,13 +361,13 @@
 @layer components {
     .c-alert {
         padding: var(--spacing-s) var(--spacing-md);
-        border-radius: var(--border-radius-m);
+        border-radius: var(--border-radius-md);
         margin-block-end: var(--spacing-md);
         text-transform: uppercase;
         letter-spacing: var(--letter-spacing-s);
         font-family: var(--font-family-system);
         font-weight: 600;
-        font-size: var(--font-size-s-x-x);
+        font-size: var(--font-size-sm-x-x);
     }
 
     .c-alert--success {
