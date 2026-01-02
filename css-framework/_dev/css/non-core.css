@@ -221,20 +221,20 @@ scope-ui;
     --font-size-2xl: 11.089rem;
     /* GROUP VARIABLES -- DECORATION -- ICONS -- SIZES
     =================================================== */
-    --icon-size-s: 1.35rem;
+    --icon-size-sm: 1.35rem;
     --icon-size-md: 1.5rem;
     --icon-size-md-2: 1.8rem;
-    --icon-size-l: 3rem;
-    --icon-size-l-2: 5rem;
+    --icon-size-lg: 3rem;
+    --icon-size-lg-2: 5rem;
     /* GROUP VARIABLES -- DECORATION -- TEXT -- OTHER
     =================================================== */
     /* Sometimes ems are useful here with scaling text */
-    --letter-spacing-s: 3px;
-    --letter-spacing-m: 5px;
-    --letter-spacing-l: 7px;
+    --letter-spacing-sm: 3px;
+    --letter-spacing-md: 5px;
+    --letter-spacing-lg: 7px;
 
-    --letter-spacing-s-em: 0.2em;
-    --letter-spacing-l-em: 0.138em;
+    --letter-spacing-sm-em: 0.2em;
+    --letter-spacing-lg-em: 0.138em;
     /* GROUP VARIABLES -- DECORATION -- TEXT SHADOWS - ordered from light to dark variants
     =================================================== */
     --text-shadow-light: 1px 2px 5px hsla(0, 98%, 16%, 0.3);

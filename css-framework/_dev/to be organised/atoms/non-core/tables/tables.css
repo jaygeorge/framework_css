@@ -13,33 +13,25 @@
     }
 
     table {
+        width: 100%;
         max-width: 100%;
         background-color: transparent;
         border-collapse: collapse;
         border-spacing: 0;
+
+        > :is(thead, tbody, tfoot) > tr {
+            > :is(th, td) {
+                padding: 11px;
+                padding-inline-end: 20px;
+                line-height: 1.43;
+                vertical-align: top;
+                border-top: 1px solid #eee;
+            }
+        }
     }
 
     th {
         text-align: left;
-    }
-
-    table {
-        width: 100%;
-    }
-
-    table > thead > tr > th,
-    table > tbody > tr > th,
-    table > tfoot > tr > th,
-    table > thead > tr > td,
-    table > tbody > tr > td,
-    table > tfoot > tr > td {
-        padding: 11px;
-        /* =JFG Added */
-        padding-inline-end: 20px;
-        /* -- */
-        line-height: 1.43;
-        vertical-align: top;
-        border-top: 1px solid #eee;
     }
 
     table > thead > tr > th {
