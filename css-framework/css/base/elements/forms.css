@@ -67,7 +67,7 @@
         padding-block-end: 1rem;
         /* Fixed */
         font-size: 16px;
-        font-weight: var(--font-family-main-weight-strong);
+        font-weight: var(--font-family-main-weight-bold);
         /* Override line-height set on body */
         line-height: 1;
     }

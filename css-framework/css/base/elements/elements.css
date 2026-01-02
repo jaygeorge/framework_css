@@ -176,7 +176,7 @@
         padding-block-start: var(--spacing-2xs);
     }
     strong {
-        font-weight: var(--font-family-main-weight-strong);
+        font-weight: var(--font-family-main-weight-bold);
     }
     /* Only target our own name-spaced components so that we don't affect plugins */
     :is([class^="c-"], [class^="o-"]) svg {

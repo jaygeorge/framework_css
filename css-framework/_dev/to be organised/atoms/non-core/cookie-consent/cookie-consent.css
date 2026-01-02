@@ -70,12 +70,12 @@
     font-size: 0.95em;
     background: var(--color-gray-light-4);
     border-radius: var(--border-radius-l);
-    font-weight: var(--font-family-main-weight-strong);
+    font-weight: var(--font-family-main-weight-bold);
     cursor: pointer;
 }
 
 .c-cookie-consent a {
-    font-weight: var(--font-family-main-weight-strong);
+    font-weight: var(--font-family-main-weight-bold);
 }
 
 .c-cookie-consent,

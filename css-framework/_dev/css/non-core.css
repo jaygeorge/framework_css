@@ -1411,7 +1411,7 @@ nav ul {
         align-items: center;
     }
     .s-entry-content--with-lead > p:first-child {
-        font-weight: var(--font-family-main-weight-strong);
+        font-weight: var(--font-family-main-weight-bold);
     }
     .s-entry-content--hero {
         padding-block-end: var(--spacing-xl);
