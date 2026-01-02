@@ -4,6 +4,8 @@
 
 @layer elements {
     body {
+        /* https://dbushell.com/2024/11/05/webkit-font-smoothing/ */
+        -webkit-font-smoothing: antialiased;
         min-height: 100vh;
         background: white;
         color: var(--color-primary-text);
