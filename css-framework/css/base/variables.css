@@ -176,8 +176,7 @@
         - You can check exactly how they see it by going to System Preferences > Displays > Scaled
 
     */
-    /* Custom */
-    @media (width >= 1025px) and (width < 1441px) {
+    @media (width >= 1020px) and (width <= 1440px) {
         /* GROUP VARIABLES -- DECORATION -- TEXT -- SIZES -- BUMPS
         =================================================== */
         /* Decrease */

@@ -293,7 +293,7 @@ scope-ui;
     =================================================== */
     --animation-timing-function-hipster: cubic-bezier(0.55, 0, 0.1, 1);
 
-    --animation-timing-function-linear-out-slow-in: cubic-bezier(0, 0, 0.2, 1);
+    --animation-timing-function-linear-out-slow-in: cubic-bezier(0, 0,b 0.2, 1);
     --animation-timing-function-in-cubic: cubic-bezier(0.55, 0.06, 0.68, 0.19);
     --animation-timing-function-in-quadratic: cubic-bezier(0.55, 0.09, 0.68, 0.53);
     --animation-timing-function-in-out-quadratic: cubic-bezier(0.46, 0.03, 0.52, 0.96);
@@ -1820,12 +1820,62 @@ nav ul {
 /* Notes...
 
     - My own mini scroll-driven animations framework. Very very basic. Essentially just variables and class names.
+    Also includes scroll-triggered animations using `.u-scrolly-triggered-` syntax, e.g. `.u-scrolly-triggered-fade-in`.
     - I've called it SCROLLY so it's easy to find it with cmd + f
+
+*/
+/* Notes...
+
+
+
+*/
+/* Dependencies...
+
+    - Timing functions such as --open-props-animation-timing-ease-2
 
 */
 @layer utilities {
     /* If they're OK with animation */
     @media (prefers-reduced-motion: no-preference) {
+        /* GROUP UTILITIES / FRAMEWORK / SCROLLY / TEMPLATE
+        =================================================== */
+        @keyframes scrolly-template {
+            from {
+                transform: translateY(calc(0% - var(--scrolly-move-by)));
+            }
+            to {
+                transform: translateY(var(--scrolly-move-by));
+            }
+        }
+        /* Notes...
+    
+            - The `from` part of the animation is optional, remove if you like
+    
+        */
+        .u-scrolly-template {
+            --scrolly-move-by: -10vh;
+            will-change: transform;
+            animation: scrolly-template auto linear;
+            animation-timeline: view();
+            animation-range: cover 0% cover 100%;
+        }
+        .u-scrolly-triggered-template {
+            --scrolly-move-by: -4vh;
+            --scrolly-duration: 3s;
+            animation: scrolly-template var(--scrolly-duration) var(--open-props-animation-timing-ease-3) both;
+            /* On enter: replay. On leave (out of view): reset to start. */
+            animation-trigger: --t replay reset;
+            /* Activate when fully in view (entry 100% exit 0%). Stay active until fully out (exit 100%) then reset. */
+            timeline-trigger:
+                --t
+                view()
+                entry var(--scrolly-trigger-entry, 100%) exit 0%
+                /
+                entry 0% exit var(--scrolly-trigger-exit, 100%)
+            ;
+        }
+        /* GROUP UTILITIES / FRAMEWORK / SCROLLY / FADE IN UP
+        =================================================== */
         @keyframes scrolly-fade-in-up {
             0%, 30% {
                 top: var(--scrolly-move-by, 5vh);
@@ -1863,6 +1913,26 @@ nav ul {
             animation-range: cover -50% cover 115%;
             animation-timing-function: linear;
             animation-name: scrolly-fade-in;
+        }
+        /* GROUP UTILITIES / FRAMEWORK / SCROLLY TRIGGERED/ FADE IN
+        =================================================== */
+        /* The trigger is .u-scrolly-triggered-fade-in-TRIGGER.
+        .u-scrolly-triggered-fade-in has the actual animation and links to this trigger. */
+        .u-scrolly-triggered-fade-in-TRIGGER {
+            timeline-trigger:
+                --t
+                view()
+                entry 120% exit 0%
+                /
+                entry 0% exit 100%
+            ;
+            trigger-scope: --t;
+        }
+        .u-scrolly-triggered-fade-in {
+            --scrolly-duration: 1s;
+            animation-name: scrolly-fade-in;
+            animation: scrolly-fade-in var(--scrolly-duration) var(--open-props-animation-timing-ease-3) both;
+            animation-trigger: --t replay reset;
         }
         /* GROUP UTILITIES / FRAMEWORK / SCROLLY / FADE IN CHILDREN
         =================================================== */
@@ -1933,22 +2003,39 @@ nav ul {
         /* GROUP UTILITIES / FRAMEWORK / SCROLLY / PARALLAX / VIEW
         =================================================== */
         @keyframes scrolly-parallax {
+            from {
+                transform: translateY(calc(0% - var(--scrolly-move-by)));
+            }
             to {
                 transform: translateY(var(--scrolly-move-by));
             }
         }
         /* Notes...
     
-            - This is based on the picture elements being absolutely positioned
+            - The `from` part of the animation is optional, remove if you like
     
         */
-        .u-scrolly-parallax-images-view {
-            view-timeline-name: --scrolly-parallax;
+        .u-scrolly-parallax-view {
             --scrolly-move-by: -10vh;
             will-change: transform;
             animation: scrolly-parallax auto linear;
             animation-timeline: view();
             animation-range: cover 0% cover 100%;
+        }
+        .u-scrolly-triggered-parallax-view {
+            --scrolly-move-by: -4vh;
+            --scrolly-duration: 3s;
+            animation: scrolly-parallax var(--scrolly-duration) var(--open-props-animation-timing-ease-3) both;
+            /* On enter: replay. On leave (out of view): reset to start. */
+            animation-trigger: --t replay reset;
+            /* Activate when fully in view (entry 100% exit 0%). Stay active until fully out (exit 100%) then reset. */
+            timeline-trigger:
+                --t
+                view()
+                entry 100% exit 0%
+                /
+                entry 0% exit 100%
+            ;
         }
         /* GROUP UTILITIES / FRAMEWORK / SCROLLY / PARALLAX
         =================================================== */
@@ -1958,7 +2045,7 @@ nav ul {
     
         */
         .u-scrolly-parallax-images {
-            view-timeline-name: --scrolly-parallax;
+            view-timeline-name:s --scrolly-parallax;
             & picture, svg {
                 --scrolly-move-by: -10vh;
                 will-change: transform;
@@ -1999,14 +2086,99 @@ nav ul {
                 }
             }
         }
+        /* GROUP UTILITIES / FRAMEWORK / SCROLLY TRIGGERED / WIPE IN AND FADE IN DOWN
+        =================================================== */
+        @keyframes wipe-in-and-fade-in-down {
+            from {
+                clip-path: inset(0 0 100% 0);
+                opacity: 0;
+            }
+            to {
+                clip-path: inset(0 0 0 0);
+                opacity: 1;
+            }
+        }
+        .u-scrolly-triggered-wipe-in-and-fade-in-down {
+            /* When you set `--scrolly-duration: something` on the element, the pseudo-element inherits it. When it’s not set, use the fallback timing below. */
+            timeline-trigger:
+                --t
+                view()
+                entry 100% exit 0%
+            ;
+            animation: wipe-in-and-fade-in-down var(--scrolly-duration, 1.5s) var(--animation-timing-function-wipe) both;
+            animation-trigger: --t play-once;
+        }
+        /* GROUP UTILITIES / FRAMEWORK / SCROLLY TRIGGERED / WIPE IN LEFT
+        =================================================== */
+        @keyframes scrolly-wipe-in-left {
+            from {
+                clip-path: inset(0 0 0 100%);
+            }
+            to {
+                clip-path: inset(0 0 0 0);
+            }
+        }
+        .u-scrolly-triggered-wipe-in-left,
+        .u-scrolly-triggered-wipe-in-left-after::after {
+            timeline-trigger:
+                --t
+                view()
+                entry 175% exit 0%
+                /
+                entry 0% exit 100%
+            ;
+            animation: scrolly-wipe-in-left var(--scrolly-duration, 10s) var(--animation-timing-function-wipe) both;
+            animation-trigger: --t replay reset;
+        }
+        /* GROUP UTILITIES / FRAMEWORK / SCROLLY TRIGGERED / WIPE IN RIGHT
+        =================================================== */
+        @keyframes scrolly-wipe-in-right {
+            from {
+                clip-path: inset(0 100% 0 0);
+            }
+            to {
+                clip-path: inset(0 0 0 0);
+            }
+        }
+        .u-scrolly-triggered-wipe-in-right,
+        .u-scrolly-triggered-wipe-in-right-after::after {
+            timeline-trigger:
+                --t
+                view()
+                entry 175% exit 0%
+                /
+                entry 0% exit 100%
+            ;
+            animation: scrolly-wipe-in-right var(--scrolly-duration, 10s) var(--animation-timing-function-wipe) both;
+            animation-trigger: --t replay reset;
+        }
+        /* GROUP UTILITIES / FRAMEWORK / SCROLLY / CIRCLE IN CENTER
+        =================================================== */
+        @keyframes scrolly-circle-in-center {
+            from {
+                clip-path: circle(0%);
+            }
+            to {
+                clip-path: circle(100%);
+            }
+        }
+        .u-scrolly-circle-in-center {
+            animation-name: scrolly-circle-in-center;
+            animation-timeline: view();
+            animation-range: cover -15% cover 125%;
+            animation-timing-function: var(--open-props-animation-timing-ease-2);
+        }
         /* GROUP UTILITIES / FRAMEWORK / SCROLLY / ROTATE
         =================================================== */
+        @keyframes scrolly-rotate {
+            to {
+                transform: rotate(var(--scrolly-rotate-by));
+            }
+        }
         .u-scrolly-rotate {
-            --scrolly-rotate-by: 35deg;
+            --scrolly-rotate-by: 365deg;
             & picture, svg {
-                will-change: transform;
                 animation: scrolly-rotate auto linear;
-                animation-timeline: --scrolly-rotate;
                 animation-timeline: view();
             }
         }
