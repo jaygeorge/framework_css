@@ -293,7 +293,7 @@ scope-ui;
     =================================================== */
     --animation-timing-function-hipster: cubic-bezier(0.55, 0, 0.1, 1);
 
-    --animation-timing-function-linear-out-slow-in: cubic-bezier(0, 0,b 0.2, 1);
+    --animation-timing-function-linear-out-slow-in: cubic-bezier(0, 0, 0.2, 1);
     --animation-timing-function-in-cubic: cubic-bezier(0.55, 0.06, 0.68, 0.19);
     --animation-timing-function-in-quadratic: cubic-bezier(0.55, 0.09, 0.68, 0.53);
     --animation-timing-function-in-out-quadratic: cubic-bezier(0.46, 0.03, 0.52, 0.96);
